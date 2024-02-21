@@ -37,5 +37,41 @@ function checkAnimal (){
     }
 }
 </script>
+
+<!-- Div container for the image -->
+    <div id="imageContainer">
+        <img id="drinkImage" src="Amaretto Sour.jpg" alt="Drink" width="150" height="150" onclick="selectImage()">
+      
+    </div>
+
+    <script>
+
+        var Imagevar = 1;
+
+        // Function to switch images
+        function selectImage() {
+            // Switch statement to determine the next image
+            switch (Imagevar) {
+                case 1:
+                    document.getElementById('drinkImage').src = 'Pina Colada.jpg';
+                    Imagevar = 2;
+                    break;
+                case 2:
+                    document.getElementById('drinkImage').src = 'Ultimate Margarita.jpg';
+                    Imagevar = 3;
+                    break;
+                case 3:
+                    document.getElementById('drinkImage').src = 'Amaretto Sour.jpg'; // Wrap back to the first image
+                    Imagevar = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+        </script>
+ 
+
+
+
 </body>
 </html> 
