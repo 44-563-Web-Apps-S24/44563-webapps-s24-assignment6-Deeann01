@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trip Planner</title>
+
+</head>
+
+<body>
+    
+        <h1>Deepika Annapureddy packs for a trip</h1>
+        <h2>Getting input</h2>
+
+        <form>
+
+        <input type="checkbox" id="Packlight" name="Packlight" value="True">
+        <label for="Packlight">Pack light</label></br>
+
+        <input type="checkbox" id="Carryon" name="Carryon" value="True">
+        <label for="Carryon">Carry on</label></br>
+
+        <input type="checkbox" id="Tablet" name="Tablet" value="False">
+        <label for="Tablet">Tablet</label></br>
+
+        <input type="button" class="button" onclick="selectPack()" value="Select for packing">
+        </form>
+        <p id="checkboxResult"></p>
+
+        <label for="monthName">Enter travel month</label>
+        <input type="text" id="monthName" name="monthName" value="May"> <br>
+
+        <label for="enterPrice">Enter price</label>
+        <input type="text" id="enterPrice" name="enterPrice"> <br>
+
+        <input type="button" class="button" onclick="updatePack()" value="Update the pack">
+        
+        </form>
+  
+    <script>
+        var my_pack = {}
+
+        function selectPack() {
+            my_pack = {}
+            my_pack = {
+                light: document.getElementById("Packlight").checked,
+                carry: document.getElementById("Carryon").checked,
+                tablet: document.getElementById("Tablet").checked
+            }
+            console.log(my_pack)
+            document.getElementById("checkboxResult").innerHTML = JSON.stringify(my_pack)
+        }
+
+        function updatePack() {
+            month = document.getElementById("monthName").value
+            price = document.getElementById("enterPrice").value
+            my_pack = {}
+            my_pack = {
+                Month: month,
+                Price: price
+            }
+            document.getElementById("checkboxResult").innerHTML = JSON.stringify(my_pack)
+        }
+    </script>
+</body>
+
+</html>
