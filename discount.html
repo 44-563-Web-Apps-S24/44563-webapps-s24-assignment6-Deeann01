@@ -9,7 +9,7 @@
 <h2>Deepika Annapureddy Discount Calculations</h2>
 
 <form>
-    <label for="price">Enter price per </label>
+    <label for="price">Enter price per item</label>
     <input type ="number" id="price" name="price"value=10> <br>
 
     <label for="count">Enter the number of items</label>
@@ -19,11 +19,26 @@
     <input type ="number" id="reductions" name="reductions"value=5> <br>
 
 
-    <input type="button" onclick="resolveForm()" value="Show total">
+    <input type="button" onclick="resolveForm()" value="Show total"><br>
+
+    <p id="result">Discount Percentages and values will be shown here!!!</p>
+
+    <input type="radio" id="sum" name="operation" value="Sum" onclick="chooseOp()">
+    <label for="sum">Sum</label><br>
+    
+    <input type="radio" id="mult" name="operation" value="Multiply" onclick="chooseOp()">
+    <label for="mult">Multiply</label><br>
+    
+    <input type="radio" id="exp" name="operation" value="Exponent" onclick="chooseOp()">
+    <label for="exp">Exponent</label><br>
+    
+    <p id="radioResult">Addition/Product/Exponent Results will be displayed</p>
 </form>
 
 
-<p id="result">Discount Percentages and values will be shown here!!!</p>
+
+
+
 <script>
     function resolveForm (){
     console.log("Getting form values")
@@ -43,6 +58,26 @@
     out = document.getElementById("result")
     out.innerHTML = "Totals  are: " + myOutput;
 }  
+
+
+function chooseOp() {
+            let price_per_value = document.getElementById("price").value;
+            let discount_percentage = document.getElementById("reductions").value;
+            var myOutput = "";
+
+            if (document.getElementById("sum").checked) {
+                value = Number(price_per_value) + Number(discount_percentage);
+                myOutput = "Addition of " + price_per_value + " and " + discount_percentage + " is " + value;
+            }
+            if (document.getElementById("mult").checked) {
+                myOutput = "Product of " + price_per_value + " and " + discount_percentage + " is " + (price_per_value * discount_percentage);
+            }
+            if (document.getElementById("exp").checked) {
+                myOutput = "Exponent of " + price_per_value + " and " + discount_percentage + " is " + (Math.pow(price_per_value, discount_percentage));
+            }
+            document.getElementById("radioResult").innerHTML = myOutput;
+        }
+
 </script>
 </body>
 </html> 
