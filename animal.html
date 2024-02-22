@@ -7,7 +7,7 @@
 
 <h2>Animal game by Deepika Annapureddy</h2>
 
-<form>
+<form id="animalForm">
     <label for="form1_hidden_animal">The hidden animal type</label>
     <input type ="password" id="form1_hidden_animal" name="form1_hidden_animal" value="Chicken"> <br>
     <label for="form1_guess_animal">Guess the animal</label>
@@ -35,6 +35,14 @@ function checkAnimal (){
         alert("Grrrr")
         out.innerHTML = "Wrong: "+wrong++
     }
+
+    document.getElementById('result').innerHTML = `<p>Correct guesses: ${correct}</p><p>Wrong guesses: ${wrong}</p>`;
+            // Bonus alert
+            if (wrong > correct) {
+                document.getElementById('animalForm').onclick = function() {
+                    alert('Sorry, too many wrong guesses.');
+                };
+            }
 }
 </script>
 
@@ -49,7 +57,7 @@ function checkAnimal (){
 
         // Function to switch images
         function selectImage() {
-            // Switch statement to slide to  the next image
+            // Switch statement  the next image
             switch (Imagevar) {
                 case 1:
                     document.getElementById('drinkImage').src = 'Pina Colada.jpg';
