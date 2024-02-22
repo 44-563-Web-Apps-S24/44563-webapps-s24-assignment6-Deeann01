@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Week6 Javascript Assignment</title>
-        <link rel="stylesheet" href="./style.css">
-        <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”
-            rel=”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I”
-            crossorigin=”anonymous”>
-    </head>
-<body>
+<head>
+    <title>Week 6 Java Assignment</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body class="container mt-5">
 
-<h2>Animal game by Deepika Annapureddy</h2>
+    <h2>Animal game by Deepika Annapureddy</h2>
 
-<form id="animalForm">
-    <div class="set">
-    <label for="form1_hidden_animal">The hidden animal type</label>
-    <input type ="password" id="form1_hidden_animal" name="form1_hidden_animal" value="Chicken"> <br>
+    <form id="animalForm" class="mt-3">
+        <div class="mb-3">
+            <label for="form1_hidden_animal" class="form-label">The hidden animal type</label>
+            <input type="password" class="form-control" id="form1_hidden_animal" name="form1_hidden_animal" value="Chicken">
+        </div>
 
-</div>
-<div class="set">
-    <label for="form1_guess_animal">Guess the animal</label>
-    <input type ="text" id="form1_guess_animal" name="form1_guess_animal" autofocus> <br>
-</div>
-    <input type="button" onclick=" checkAnimal()" value="Check the guess">
-</form>
+        <div class="mb-3">
+            <label for="form1_guess_animal" class="form-label">Guess the animal</label>
+            <input type="text" class="form-control" id="form1_guess_animal" name="form1_guess_animal" autofocus>
+        </div>
+        
+        <button type="button" class="btn btn-primary" onclick="checkAnimal()">Check the guess</button>
+    </form>
 
-
-<div id="result" class="container mt-3">
-    <p class="lead">Hey there! Just go ahead and click "Check the guess". Results will be shown here.</p>
-</div>
+    <div id="result" class="container mt-3">
+        <p class="lead">Hey there! Just go ahead and click "Check the guess". Results will be shown here.</p>
+    </div>
 
 <script> 
 let wrong = 0
