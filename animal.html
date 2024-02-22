@@ -2,22 +2,32 @@
 <html>
     <head>
         <title>Week6 Javascript Assignment</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”
+            rel=”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I”
+            crossorigin=”anonymous”>
     </head>
 <body>
 
 <h2>Animal game by Deepika Annapureddy</h2>
 
 <form id="animalForm">
+    <div class="set">
     <label for="form1_hidden_animal">The hidden animal type</label>
     <input type ="password" id="form1_hidden_animal" name="form1_hidden_animal" value="Chicken"> <br>
+
+</div>
+<div class="set">
     <label for="form1_guess_animal">Guess the animal</label>
     <input type ="text" id="form1_guess_animal" name="form1_guess_animal" autofocus> <br>
-
+</div>
     <input type="button" onclick=" checkAnimal()" value="Check the guess">
 </form>
 
 
-<p id="result">Hey there!!Just go and click "check the guess". Results will be shown here</p>
+<div id="result" class="container mt-3">
+    <p class="lead">Hey there! Just go ahead and click "Check the guess". Results will be shown here.</p>
+</div>
 
 <script> 
 let wrong = 0
@@ -46,10 +56,12 @@ function checkAnimal (){
 }
 </script>
 
-    <div id="imageContainer">
-        <img id="drinkImage" src="Amaretto Sour.jpg" alt="Drink" width="150" height="150" onclick="selectImage()">
-      
+<div class="container mt-5">
+    <div class="image-container" onclick="selectImage()">
+        <img id="drinkImage" src="Amaretto Sour.jpg" alt="Drink" class="img-fluid rounded" width="150" height="150">
     </div>
+</div>
+
 
     <script>
 
